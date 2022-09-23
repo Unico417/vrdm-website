@@ -79,6 +79,38 @@ main {
     padding: 2em 0;
 }
 
+/* HOME */
+
+#home .information .info {
+    color: var(--text-color);
+    background-color: #222;
+    border-radius: .5em;
+}
+
+#home .information .info h2 {
+    text-align: center;
+}
+
+#home .information .info ul {
+    margin: 0;
+    padding: 0;
+}
+
+#home .information .info li {
+    padding: .75em 0 .75em 2em;
+}
+
+#home .information .info .date {
+    display: inline-block;
+    width: 7em;
+}
+
+#home .staff-list .staff-list_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 /* EVENT */
 #event .post {
     margin: 2em 0;
