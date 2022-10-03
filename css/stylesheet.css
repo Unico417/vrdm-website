@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=M+PLUS+1p&display=swap');
+
 :root {
-    --text-color: #eee;
+    --text-color: #ddd;
     --bg-color: #333;
+    --bg-dark: #111;
     --content-color: #333;
-    --content-bg: rgba(255, 255, 255, .8)
+    --content-bg: rgba(255, 255, 255, .8);
+    --cyan: cyan;
+    --magenta: magenta;
+    --yellow: yellow;
 }
 
 body {
@@ -10,6 +17,8 @@ body {
     margin: 0;
     font-size: 24px;
     color: var(--text-color);
+    font-family: 'Josefin Sans', 'M PLUS 1p', sans-serif;
+    letter-spacing: .05em;
 }
 
 h1 {
@@ -81,7 +90,7 @@ header #top {
 main {
     margin: 0;
     padding: 0;
-    background-color: #555;
+    background-color: var(--bg-dark);
 }
 
 #content {
@@ -104,7 +113,11 @@ main {
 }
 
 #home .information .info h2 {
+    margin: 0;
+    padding: .5em;
     text-align: center;
+    background-color: #333;
+    border-radius: .5em;
 }
 
 #home .information .info ul {
@@ -115,6 +128,16 @@ main {
 
 #home .information .info li {
     padding: .75em 0 .75em 2em;
+    border-bottom: 1px solid #333;
+    transition: 500ms;
+}
+
+#home .information .info li:last-child {
+    border-radius: 0 0 .5rem .5rem;
+}
+
+#home .information .info li:hover {
+    background-color: #555;
 }
 
 #home .information .info .date {
@@ -122,14 +145,65 @@ main {
     width: 7em;
 }
 
+#home .about {
+    margin: 3em -8em;
+    padding: 2em 8em;
+    color: var(--text-color);
+    background-color: var(--bg-dark);
+    transform: rotate(-1deg);
+}
+
+#home .about * {
+    transform: rotate(1deg);
+}
+
+#home .about h2 {
+    color: white;
+}
+
+#home .section-header-decoration1 {
+    margin: 1em 0 1.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    text-align: center;
+}
+
+#home .section-header-decoration1::before,
+#home .section-header-decoration1::after {
+    content: '';
+    width: 70px;
+    height: 4px;
+    background-color: white;
+}
+
+#home .section-header-decoration1::before {
+    margin-right: 1em;
+}
+
+#home .section-header-decoration1::after {
+    margin-left: 1em;
+}
+
+#home .staff-list {
+    margin: 0;
+    padding: 0 0 4em 0;
+}
+
 #home .staff-list .staff {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 2em;
-    margin: 2em;
-    padding: 1.5em;
-    border: 1px solid black;
+    margin: 0 auto;
+    padding: 3em 3em;
+    width: 75%;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 1px solid gray;
+    border-radius: .5rem;
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .35);
 }
 
 #home .staff-list .staff .info {
@@ -140,6 +214,7 @@ main {
 #home .staff-list .staff .image {
     width: 30%;
     height: 12em;
+    box-shadow: 10px 10px 9px rgba(0, 0, 0, .35);
 }
 
 #home .staff-list .staff .image img {
@@ -149,22 +224,41 @@ main {
     object-position: 70%;
 }
 
-#home .staff-list .staff .info .bio {
-    font-size: .85em;
-}
-
-#home .staff-list .staff:nth-child(even) {
-    flex-direction: row;
-}
-
-#home .staff-list .staff:nth-child(odd) {
-    flex-direction: row-reverse;
-}
-
-
 #home .staff-list .staff h3 {
     padding: 0;
     margin: 0;
+    border-bottom: 2px solid var(--cyan);
+}
+
+#home .staff-list .staff h3::first-letter {
+    margin-right: .1em;
+    color: var(--yellow);
+    font-size: 200%;
+}
+
+#home .staff-list .staff .info .bio {
+    margin-left: 1.5em;
+    font-size: .85em;
+}
+
+/* TODO */
+#home .staff-list .staff:nth-child(even) {
+    flex-direction: row;
+    transform: rotate(1deg);
+}
+
+#home .staff-list .staff:nth-child(even) * {
+    transform: rotate(-1deg);
+}
+
+/* TODO */
+#home .staff-list .staff:nth-child(odd) {
+    flex-direction: row-reverse;
+    transform: rotate(-1deg);
+}
+
+#home .staff-list .staff:nth-child(odd) * {
+    transform: rotate(1deg);
 }
 
 /* EVENT */
@@ -288,4 +382,10 @@ footer span {
     display: block;
     font-size: .6em;
     text-align: center;
+}
+
+@media screen and (max-width:1200px) {
+    #content {
+        padding: 0 1px;
+    }
 }
