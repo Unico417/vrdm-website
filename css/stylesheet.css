@@ -34,13 +34,34 @@ img {
 }
 
 /* Header */
-header #top {
+#top {
+    position: relative;
     padding: 0;
     margin: 0;
     height: 20em;
     background-color: var(--bg-color);
     background-size: cover;
     background-position: center;
+}
+
+#top h1 {
+    opacity: 0;
+}
+
+#top .vrdm-logo {
+    position: absolute;
+    top: .5em;
+    left: 1em;
+    max-width: 50%;
+    filter: drop-shadow(5px 5px 5px #000);
+}
+
+#top .enforce-logo {
+    position: absolute;
+    bottom: .5em;
+    right: 1em;
+
+    max-width: 50%;
 }
 
 #home header #top {
@@ -102,6 +123,17 @@ main {
 
 #content section {
     padding: 2em 0;
+}
+
+#home .mark-enforce,
+#event .mark-enforce,
+#contact .mark-enforce,
+#circle .mark-enforce {
+    margin: 0 auto;
+    padding: 0 0 1em 0;
+    max-width: 20%;
+    max-height: 20%;
+    mix-blend-mode: multiply;
 }
 
 /* HOME */
@@ -227,13 +259,21 @@ main {
 #home .staff-list .staff h3 {
     padding: 0;
     margin: 0;
+    font-size: 1.5em;
+}
+
+#home .staff-list .staff:nth-child(odd) h3 {
     border-bottom: 2px solid var(--cyan);
+}
+
+#home .staff-list .staff:nth-child(even) h3 {
+    border-bottom: 2px solid var(--magenta);
 }
 
 #home .staff-list .staff h3::first-letter {
     margin-right: .1em;
     color: var(--yellow);
-    font-size: 200%;
+    font-size: 150%;
 }
 
 #home .staff-list .staff .info .bio {
@@ -321,21 +361,52 @@ main {
     justify-content: center;
     align-items: flex-start;
     gap: 2em;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     border: 1px solid #222;
+    border-radius: .5em;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, .5);
+    transition: 500ms;
+}
+
+#contact section h2 {
+    font-size: 0;
+    opacity: 0;
+}
+
+#contact .vrdm-logo {
+    margin-bottom: 2em;
+    width: 24em;
+    max-width: 60%;
+}
+
+#contact .staff:hover {
+    transform: scale(1.05);
 }
 
 #contact .staff .info,
 #enforce .staff .info {
     width: 60%;
-    display: flex;
-    justify-content: flex-end;
 }
 
 #contact .staff .info_wrap,
 #enforce .staff .info_wrap {
+    margin: 1em;
     font-size: 1.2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
+#contact .info_wrap span {
+    display: block;
+}
+
+#contact .info_wrap .name {
+    margin: .25em 0 1em 0;
+    font-size: 2em;
+}
 
 #contact .staff .image,
 #enforce .staff .image {
@@ -354,11 +425,6 @@ main {
 #enforce .staff .image_wrap {
     width: auto;
     height: 16em;
-}
-
-#contact .staff .role,
-#enforce .staff .role {
-    margin: auto 2em auto auto;
 }
 
 /* Footer */
@@ -385,7 +451,21 @@ footer span {
 }
 
 @media screen and (max-width:1200px) {
+    #home #content {
+        padding: 0 1em;
+    }
+}
+
+@media screen and (max-width:1200px) {
     #content {
-        padding: 0 1px;
+        margin: 0 1em;
+    }
+
+    #top .vrdm-logo {
+        max-width: 80%;
+    }
+
+    #top .enforce-logo {
+        max-width: 80%;
     }
 }
