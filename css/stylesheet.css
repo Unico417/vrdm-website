@@ -215,6 +215,15 @@ main {
     background-color: #555;
 }
 
+#home .information .info span.tag.new {
+    padding: .5em .5em .35em .5em;
+    font-size: .7em;
+    color: white;
+    background-color: red;
+    margin-right: .5em;
+    border-radius: .2em;
+}
+
 #home .information .info .date {
     display: inline-block;
     width: 7em;
@@ -349,6 +358,25 @@ main {
 }
 
 /* EVENT */
+
+#event h2 {
+    padding: .5em;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+#event h2:nth-child(n+2) {
+    margin-top: 4em;
+}
+
+#event h2.cyan {
+    border-left: 10px solid var(--cyan);
+}
+
+#event h2.magenta {
+    border-left: 10px solid var(--magenta);
+}
+
 #event .post {
     margin: 2em 0;
 }
@@ -403,7 +431,7 @@ main {
 }
 
 #event .post .info p {
-    margin: 0;
+    margin: 0 0 .25em 0;
 }
 
 #event .post .date {
@@ -516,11 +544,10 @@ main {
     opacity: 0;
 }
 
-#contact .content .vrdm-logo,
-#contact .content .enforce-logo {
+#contact #content .vrdm-logo,
+#contact #content .enforce-logo {
     margin: 0 auto 2em auto;
-    width: 24em;
-    max-width: 60%;
+    width: 66%;
 }
 
 #contact .staff:hover {
@@ -641,7 +668,7 @@ footer span {
 
     body,
     p {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     #home #content,
@@ -661,11 +688,33 @@ footer span {
         text-align: center;
     }
 
-    #home .staff-list .staff {
+    #home .staff-list .staff:nth-child(odd),
+    #home .staff-list .staff:nth-child(even) {
         width: calc(100% - 3em);
-        max-width: 100%;
+        max-width: calc(100% - 3em);
         margin: 0;
         padding: 1.5em;
         gap: 1em;
+        flex-direction: column-reverse;
+    }
+
+    #home .staff-list .staff:nth-child(odd) .info,
+    #home .staff-list .staff:nth-child(even) .info {
+        width: 100%;
+    }
+
+    #home .staff-list .staff .image {
+        margin: 0 auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 50%;
+    }
+
+    #home .staff-list .staff .image img {
+        object-fit: contain;
+    }
+
+    #home .information .info h2 {
+        font-size: 1.2em;
     }
 }
