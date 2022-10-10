@@ -80,6 +80,10 @@ img {
     background-image: url("../img/head/head_event.png");
 }
 
+#circle header #top {
+    background-image: url("../img/head/head_circle.jpg");
+}
+
 #contact header #top {
     background-image: url("../img/head/head_contact.png");
     background-position-y: bottom;
