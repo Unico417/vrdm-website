@@ -341,6 +341,10 @@ main {
     font-size: .85em;
 }
 
+#home .staff-list .staff .info .bio a {
+    text-decoration: underline;
+}
+
 /* TODO */
 #home .staff-list .staff:nth-child(even) {
     flex-direction: row;
@@ -391,6 +395,10 @@ main {
 
 #event .post.img-bottom .info p {
     margin: 0;
+}
+
+#event .post .description {
+    margin: 1em 0;
 }
 
 #event .post.img-bottom .image {
